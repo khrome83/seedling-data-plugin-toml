@@ -2,7 +2,7 @@ import {
   assertEquals,
 } from "https://deno.land/std@0.64.0/testing/asserts.ts";
 import { denock } from "https://deno.land/x/denock@0.2.0/mod.ts";
-import json from "./mod.ts";
+import toml from "./mod.ts";
 
 const response = {
   success: (data: object) => {
@@ -41,7 +41,7 @@ Deno.test("TOML in body of data directive", async () => {
     root: Deno.cwd(),
   };
 
-  const output = await json(request, response);
+  const output = await toml(request, response);
   const expected = {
     bin: [
       { name: "deno", path: "cli/main.rs" },
@@ -62,7 +62,7 @@ Deno.test("TOML from file attribute of data directive", async () => {
     root: Deno.cwd(),
   };
 
-  const output = await json(request, response);
+  const output = await toml(request, response);
   const expected = {
     bin: [
       { name: "deno", path: "cli/main.rs" },
@@ -104,7 +104,7 @@ Deno.test("TOML from url attribute of data directive", async () => {
     `,
   });
 
-  const output = await json(request, response);
+  const output = await toml(request, response);
   const expected = {
     bin: [
       { name: "deno", path: "cli/main.rs" },
