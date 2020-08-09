@@ -1,32 +1,31 @@
-# seedling-data-plugin-graphcms
+# seedling-data-plugin-toml
 
-A data plugin to read and parse JSON data.
+A data plugin to read and parse TOML data.
 
 ## Usage
 
-1. Create a new file in `/data` with the name `json.ts`.
+1. Create a new file in `/data` with the name `toml.ts`.
 
 ```ts
-import json from "https://raw.githubusercontent.com/use-seedling/seedling-data-plugin-json/master/mod.ts";
-export default json;
+import toml from "https://raw.githubusercontent.com/use-seedling/seedling-data-plugin-toml/master/mod.ts";
+export default toml;
 ```
 
 2. Use with seedling data directive. There are three ways to use the directive.
 
-### As raw inline JSON
+### As raw inline TOML
 
 ```html
-  <:data use="json">
-    {
-      "key": "value"
-    }
+  <:data use="toml">
+    [[foo]]
+    hello = "world"
   </:data>
 ```
 
 ### From a local file
 
 ```html
-<:data use="json" file="path/to/json/file.json" />
+<:data use="toml" file="path/to/json/file.toml" />
 ```
 
 > **Note** - This plugin requires the `--allow-read` command line parameter for Deno when using file attribute.
@@ -34,7 +33,7 @@ export default json;
 ### From a remote url
 
 ```html
-<:data use="json" url="https://example.com/path/to/file.json" />
+<:data use="toml" url="https://example.com/path/to/file.toml" />
 ```
 
 > **Note** - This plugin requires the `--allow-net` command line parameter for Deno when using url attribute.
