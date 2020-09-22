@@ -2,8 +2,8 @@ import type {
   Request,
   Response,
 } from "https://raw.githubusercontent.com/use-seedling/seedling/master/mod.ts";
-import { join } from "https://deno.land/std@0.69.0/path/mod.ts";
-import { parse } from "https://deno.land/std@0.69.0/encoding/toml.ts";
+import { join } from "https://deno.land/std@0.70.0/path/mod.ts";
+import { parse } from "https://deno.land/std@0.70.0/encoding/toml.ts";
 
 interface TOMLFiles {
   file?: string;

@@ -7,7 +7,7 @@ A data plugin to read and parse TOML data.
 1. Create a new file in `/data` with the name `toml.ts`.
 
 ```ts
-import toml from "https://raw.githubusercontent.com/use-seedling/seedling-data-plugin-toml/master/mod.ts";
+import toml from "https://deno.land/x/seedling_data_plugin_toml@0.0.1/mod.ts";
 export default toml;
 ```
 
